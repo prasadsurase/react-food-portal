@@ -1,6 +1,7 @@
 import React from "react";
 import classes from './Header.module.css';
 import mealsImage from '../../assets/images/meals.jpg';
+import HeaderCartButton from "./HeaderCartButton";
 
 type HeaderProps = {
   // /** CSS class(es) to apply to the badge container element */
@@ -20,12 +21,11 @@ const Header = (props: HeaderProps) => {
     <React.Fragment>
       <header className={classes.header}>
         <h1>Meals Portal</h1>
-        <button>Cart</button>
+        <HeaderCartButton />
       </header>
       <div className={classes['main-image']}>
         <img src={mealsImage} alt="some description goes here"/>
       </div>
-      
     </React.Fragment>
   );
 };
