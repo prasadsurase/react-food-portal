@@ -1,5 +1,6 @@
 import React from "react";
 import classes from './Cart.module.css';
+import Modal from "./Modal";
 
 type CartProps = {
   children?: any;
@@ -15,7 +16,7 @@ const Cart = ({}: CartProps) => {
     }
   ].map(item => <li>{item.name}</li>)}</ul>;
   return(
-    <div>
+    <Modal>
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
@@ -25,7 +26,7 @@ const Cart = ({}: CartProps) => {
         <button className={classes['button--alt']}>Close</button>
         <button className={classes.button}>Order</button>
       </div>
-    </div>
+    </Modal>
   );
 };
 
