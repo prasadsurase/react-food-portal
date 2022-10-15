@@ -4,15 +4,16 @@ import ModalOverlay from "./ModalOverlay";
 import Backdrop from "./Backdrop";
 
 type ModalProps = {
+  onClose?: () => void;
   children?: any;
 };
 
-const Modal = ({children}: ModalProps) => {
+const Modal = ({onClose, children}: ModalProps) => {
   const portalElement = document.getElementById('overlay-root') as HTMLElement;
 
   return(
     <React.Fragment>
-      {ReactDOM.createPortal(<Backdrop/>, portalElement)}
+      {ReactDOM.createPortal(<Backdrop onClose={onClose} />, portalElement)}
       {ReactDOM.createPortal(<ModalOverlay>{children}</ModalOverlay>, portalElement)}
     </React.Fragment>
   );

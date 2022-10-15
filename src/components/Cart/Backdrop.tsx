@@ -2,12 +2,13 @@ import React from "react";
 import classes from './Modal.module.css';
 
 type BackdropProps = {
+  onClose?: () => void;
   children?: any;
 };
 
-const Backdrop = (props: BackdropProps) => {
+const Backdrop = ({onClose}: BackdropProps) => {
   return(
-    <div className={classes.backdrop}>
+    <div className={classes.backdrop} onClick={onClose}>
       
     </div>
   );
